@@ -3,7 +3,7 @@
 # metadata should be listed in those posts. For header/footer information, it
 # will probably be easier to modify templates/index.html.
 
-from os import listdir
+from os import listdir,path
 import frontmatter
 from datetime import datetime
 from dateutil.parser import parse
@@ -45,7 +45,7 @@ metadatas = [getMetadata(fn) for fn in static_posts]
 metadatas = [m for m in metadatas if not m['draft']]
 metadatas.sort(key=lambda md: md['date'], reverse=True)
 
-with open("./index.md", "w") as f:
+with open("./output/index.md", "w") as f:
     if len(metadatas) == 0:
         f.write("There aren't any posts yet.\n")
     else:
@@ -63,6 +63,7 @@ with open("./index.md", "w") as f:
 
 # Construct a JSON feed.
 feed = jf.Feed("blog")
+output = "./output"
 for metadata in metadatas:
     url = getStaticFilename(metadata)
     item = jf.Item(
@@ -80,10 +81,11 @@ for metadata in metadatas:
     # Set content_html to full generated contents.
     # NOTE: relative links (incl. img sources) won't work in a feed reader, but
     # this is a better best effort than just including abstracts.
+    url = path.join(output,url)
     with open(url, "r") as html:
         item.content_html = html.read()
 
     feed.items.append(item)
 
-with open("./feed.json", "w") as f:
+with open("./output/feed.json", "w") as f:
     f.write(feed.to_json(indent="\t"))
