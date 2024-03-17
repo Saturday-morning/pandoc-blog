@@ -1,5 +1,5 @@
 (原作者说了算
-
+先进py虚拟环境，再make install，再make
 
 # pandoc-blog
 
