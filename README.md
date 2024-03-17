@@ -1,3 +1,6 @@
+(原作者说了算
+
+
 # pandoc-blog
 
 This is a *very* basic Pandoc static site generator.
