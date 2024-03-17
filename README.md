@@ -1,3 +1,9 @@
+(原作者说了算
+
+先进py虚拟环境，再pip3 install -r requirements.txt 
+
+再make install，再make
+
 # pandoc-blog
 
 This is a *very* basic Pandoc static site generator.
