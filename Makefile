@@ -10,13 +10,13 @@ output/gen/%.html: ./posts/%.md
 
 output/index.html: $(OUT) make_index.py
 	python3 make_index.py
-	pandoc -s output/index.md -o output/index.html --template templates/index.html  --css="./output/styles/common.css" --css="./output/styles/index.css"
+	pandoc -s output/index.md -o output/index.html --template templates/index.html  --css="./styles/common.css" --css="./styles/index.css"
 	rm output/index.md
 
 # Shortcuts
 
 open: all
-	open /output/index.html
+	open ./output/index.html
 
 # Get an ISO 8601 date.
 date:
@@ -35,3 +35,8 @@ install:
 	mkdir output
 	cp -r ./styles ./output/styles
 	cp -r ./gen ./output/gen
+update:
+	rm -r ./output
+	mkdir output
+	cp -r ./styles ./output/styles
+	cp -r ./gen ./output/gen	

@@ -2,3 +2,5 @@
 pyvenv.cfg
 /include
 /bin
+/output
+/posts
