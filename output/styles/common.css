@@ -1,0 +1,57 @@
+body {
+  width: 1000px;
+  max-width: 90%;
+  margin: 4em auto;
+}
+
+.title {
+  font-size: 3.5em
+}
+
+body li {
+  text-align: left;
+  line-height: 1.2;
+  font-size: 1.5em;
+}
+
+p {
+  text-align: justify;
+  line-height: 1.1;
+  font-size: 1.3em;
+  font: Noto Serif CJK TC;
+}
+
+hr {
+  max-width: 33%;
+  margin: 2em auto;
+}
+
+blockquote, div.sourceCode {
+  background: #f9f9f9;
+  padding: 0.5em 10px;
+}
+
+p > code, li > code {
+  padding: 1px 3px;
+  border-radius: 3px;
+  background-color: #f0f0f0;
+}
+
+.math.inline {
+  white-space: nowrap;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Prevent subscripts, superscripts from changing line height. */
+sup, sub {
+  vertical-align: baseline;
+  position: relative;
+  top: -0.4em;
+}
+
+sub {
+  top: 0.4em;
+}
