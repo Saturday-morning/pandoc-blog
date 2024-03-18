@@ -32,11 +32,14 @@ hook:
 .PHONY: install
 install:
 	pip install -r requirements.txt
-	mkdir output
+	mkdir output gen styles posts img
 	cp -r ./styles ./output/styles
 	cp -r ./gen ./output/gen
+	cp -r ./img ./output/img
+
 update:
 	rm -r ./output
 	mkdir output
 	cp -r ./styles ./output/styles
-	cp -r ./gen ./output/gen	
+	cp -r ./gen ./output/gen
+	cp -r ./img ./output/img
