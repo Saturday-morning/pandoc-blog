@@ -1,9 +1,11 @@
 (原作者说了算
 
+# 安装
 先进py虚拟环境，再make install
 
+# 日常
 在posts里面输入你的文章（toml见下面英文部分），模板在template里
-再make,更新了css就make update,再make 最后在output文件夹里
+然后bash new.sh 最后把output文件夹整个复制到github-pages就好（
 
 # pandoc-blog
 
