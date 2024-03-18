@@ -87,5 +87,5 @@ for metadata in metadatas:
 
     feed.items.append(item)
 
-with open("./output/feed.json", "w") as f:
-    f.write(feed.to_json(indent="\t"))
+# with open("./output/feed.json", "w") as f:
+    # f.write(feed.to_json(indent="\t"))

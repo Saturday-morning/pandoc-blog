@@ -38,8 +38,7 @@ install:
 	cp -r ./img ./output/img
 
 update:
-	rm -r ./output
-	mkdir output
+	rm -rf ./output/index.html ./output/gen/*.html ./output/img ./output/styles
 	cp -r ./styles ./output/styles
-	cp -r ./gen ./output/gen
+	cp -r ./gen ./output/gen/*.html
 	cp -r ./img ./output/img
