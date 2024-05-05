@@ -23,6 +23,28 @@ $if(quotes)$
       q { quotes: "“" "”" "‘" "’"; }
 $endif$
   </style>
+  
+  <link rel="stylesheet" href="https://jhammann.github.io/sakura/dist/sakura.css">
+<style>
+	div .sakura{
+		position: fixed;
+		right: 0;
+		bottom: 0;
+	}
+	div .sakana-box{
+		position: fixed;
+		right: 0;
+		bottom: 0;
+		transform-origin: 100% 100%; /* 从右下开始变换 */
+	}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/sakana"></script>
+
+$for(header-includes)$
+  $header-includes$
+$endfor$
+</head>
+<body>
 $if(highlighting-css)$
   <style>
 $highlighting-css$
@@ -64,10 +86,31 @@ $if(toc)$
 <nav id="$idprefix$TOC" role="doc-toc">
 $table-of-contents$
 </nav>
+
 $endif$
+
+<div>
+	<div class="sakura">
+		<script src="https://jhammann.github.io/sakura/dist/sakura.js"></script>
+		<script>
+			var sakura = new Sakura('div');
+		</script>
+	</div>
+
+	<div class="sakana-box">
+		<script>
+			Sakana.init({
+			el:         '.sakana-box',     // 启动元素 node 或 选择器
+			scale:      .5,                // 缩放倍数
+			canSwitchCharacter: true,      // 允许换角色
+			});
+		</script>
+	</div>
+</div>
 $body$
 $for(include-after)$
 $include-after$
 $endfor$
+</body>
 </body>
 </html>
